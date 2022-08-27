@@ -29,10 +29,19 @@ import NewExpense from './components/NewExpense/NewExpense';
     },
   ];
 
+
+// cheching if new data made it to the App 
+  const addExpenseHandler = expense => {
+    console.log('in App.js');
+    console.log(expense);
+  };
+
+  // passing addExpenseHandler to NewExpense to see if freshly added data made it to App
   return (
     <div>
       <NewExpense/>
       <div>
+        <NewExpense onAddExpense={addExpenseHandler}/>
         <Expenses items={expenses}
         />
       </div>
