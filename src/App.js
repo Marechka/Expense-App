@@ -39,7 +39,6 @@ import NewExpense from './components/NewExpense/NewExpense';
   // passing addExpenseHandler to NewExpense to see if freshly added data made it to App
   return (
     <div>
-      <NewExpense/>
       <div>
         <NewExpense onAddExpense={addExpenseHandler}/>
         <Expenses items={expenses}
