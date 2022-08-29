@@ -6,9 +6,11 @@ import ExpenseForm from './ExpenseForm';
 const NewExpense = (props) => {
 
     // this function will be called and executed when form is saved in ExpenseForm. we are passing pointer to the function via props
-    const saveExpenseDataHandler = (eneteredExpenseData) => {
+    const saveExpenseDataHandler = (enteredExpenseData) => {
+        console.log(enteredExpenseData);
+
         const expenseData = {
-            ...eneteredExpenseData, // coping values from entered data in obkect from expenseForm
+            ...enteredExpenseData, // coping values from entered data in obkect from expenseForm
             id: Math.random().toString() // assigning new ID
         };
         console.log(expenseData);

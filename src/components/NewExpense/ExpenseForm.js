@@ -34,7 +34,7 @@ const ExpenseForm = (props) => {
     // })
     }
 
-    const dateChangeHandler =(event) => {
+    const dateChangeHandler = (event) => {
         setEnteredDate(event.target.value);
     }
 
@@ -48,7 +48,7 @@ const ExpenseForm = (props) => {
         };
         console.log(expenseData);
 
-        props.onSaveExpenseData(); // we sent prop from NewExpense Component and here when submitHandler is executed, we execute this function as well
+        props.onSaveExpenseData(expenseData); // we sent prop from NewExpense Component and here when submitHandler is executed, we execute this function as well
                                     // even though it's defined in NewExpense component. There we passed the fucntion to Form element with onSave={onSaveExpData}
         setEnteredTitle(''); // clearing form/ setting value to empty string. It's called @ WAY BINDING. in <input> we add atribute "value={ennteredTitle}", which is now an empty string
         setEnteredAmount('');
