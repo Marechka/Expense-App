@@ -16,15 +16,17 @@ import Card from '../UI/Card';
     }
 
   return (
-    <Card className="expense-item">
-      <ExpenseDate date={props.date} />
-      <div className="expense-item__description">
-        {/* <h2>{props.title}</h2>     since now we use title from useState, can take of "props*/}
-        <h2>{title}</h2>
-        <div className="expense-item__price">${props.amount}</div>
-      </div>
-      <button onClick={clickHandler}>Change button</button> 
-    </Card>
+    <li>
+      <Card className="expense-item">
+        <ExpenseDate date={props.date} />
+        <div className="expense-item__description">
+          {/* <h2>{props.title}</h2>     since now we use title from useState, can take of "props*/}
+          <h2>{title}</h2>
+          <div className="expense-item__price">${props.amount}</div>
+        </div>
+        <button onClick={clickHandler}>Change button</button>
+      </Card>
+    </li>
     // "on" prop wants function which specify what happens in case of event
     // in our case we put logic into variable and pass a pointer to it in onCllick
   );

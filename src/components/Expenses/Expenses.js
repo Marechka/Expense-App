@@ -1,6 +1,7 @@
-import ExpenseItem from "./ExpenseItem";
+// import ExpenseItem from "./ExpenseItem";
 import Card from "../UI/Card";
 import ExpensesFilter from "./ExpensesFilter";
+import ExpensesList from './ExpensesList';
 import "./Expenses.css";
 import "../UI/Card";
 import { useState } from "react";
@@ -18,6 +19,7 @@ const Expenses = (props) => {
     return expense.date.getFullYear().toString() === filteredYear;
   });
 
+ 
   return (
     // <ExpenseItem item={props}/>
     <Card className="expenses">
@@ -25,16 +27,8 @@ const Expenses = (props) => {
         selected={filteredYear}
         onChangeFilter={filterChangeHandler}
       />
-      {/* traversing an array with expenses( came as "items" from App*/}
-      {filteredExpenses.map(expense => (
-        <ExpenseItem
-        // must add key for better performance of react and to avoid bugs. always add it when mapping. This fixed my bug with name, but not with date 
-          key={expense.id}
-          title={expense.title}
-          amount={expense.amount}
-          date={expense.date}
-        />
-      ))}
+      {/* now we have lean jsx and just show whatever expenseContent has according to condition */}
+      <ExpensesList items={filteredExpenses}/>
       {/* <ExpenseItem
         title={props.items[0].title}
         amount={props.items[0].amount}
