@@ -14,6 +14,10 @@ const Expenses = (props) => {
     console.log(selectedYear);
   };
 
+  const filteredExpenses = props.items.filter(expense => {
+    return expense.date.getFullYear().toString() === filteredYear;
+  });
+
   return (
     // <ExpenseItem item={props}/>
     <Card className="expenses">
@@ -22,8 +26,10 @@ const Expenses = (props) => {
         onChangeFilter={filterChangeHandler}
       />
       {/* traversing an array with expenses( came as "items" from App*/}
-      {props.items.map(expense => (
+      {filteredExpenses.map(expense => (
         <ExpenseItem
+        // must add key for better performance of react and to avoid bugs. always add it when mapping. This fixed my bug with name, but not with date 
+          key={expense.id}
           title={expense.title}
           amount={expense.amount}
           date={expense.date}
