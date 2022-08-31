@@ -2,6 +2,7 @@
 import Card from "../UI/Card";
 import ExpensesFilter from "./ExpensesFilter";
 import ExpensesList from './ExpensesList';
+import ExpensesChart from './ExpensesChart';
 import "./Expenses.css";
 import "../UI/Card";
 import { useState } from "react";
@@ -27,6 +28,7 @@ const Expenses = (props) => {
         selected={filteredYear}
         onChangeFilter={filterChangeHandler}
       />
+      <ExpensesChart expenses={filteredExpenses}/>
       {/* now we have lean jsx and just show whatever expenseContent has according to condition */}
       <ExpensesList items={filteredExpenses}/>
       {/* <ExpenseItem

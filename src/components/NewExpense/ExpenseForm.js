@@ -43,7 +43,8 @@ const ExpenseForm = (props) => {
         // building new expense object since we used individual useState for each entry
         const expenseData = {
             title: enteredTitle,
-            amount:enteredAmount,
+            // + is making sure that added amount is a number and not a String
+            amount: +enteredAmount,
             date: new Date(enteredDate)
         };
         console.log(expenseData);
